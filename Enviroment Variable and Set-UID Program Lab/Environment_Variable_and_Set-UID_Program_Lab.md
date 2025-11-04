@@ -1,8 +1,8 @@
 # Environment Variable and Set-UID Program Lab
 
-### Environment Variable Operations
+## Environment Variable Operations
 
-!(./lab3_images/task1/printenv.jpg)
+![](./lab3_images/task1/printenv.jpg)
 
 After applying command "printenv", what I see are:
 
@@ -23,7 +23,7 @@ After exporting, command "printenv my_lab" prints "lab3". "export" makes the var
 
 After using "unset", "printenv my_lab" prints nothing, which means "unset" removes a variable from shell environment. This surprises me because the variable's deleted without any notification or sign.
 
-### Passing Environment Variable from PArent Process to Child Process
+## Passing Environment Variable from PArent Process to Child Process
 
 ![](../lab3_images/task2/setup.jpg)
 
@@ -37,7 +37,7 @@ I use "nano" command to open file "myprintenv.c" to edit it. The editing include
 
 I use the command "./a.out > file2" to run the program again. This run save only the parent's environment so I can compare it with the first output. After using command "diff file file2" to compare 2 outputs, I see that there's no differences which mean the environment variables are identical. This confirms the child inherits a copy of the parent's environment.
 
-### Environment Variables and execve()
+## Environment Variables and execve()
 
 ![](../lab3_images/task3/step1.jpg)
 
@@ -51,4 +51,4 @@ Next, I use command "nano myenv.c" to open the file "myenv.c" and change the inv
 
 After compiling, I can see the output shows environment variable such that PATH, USER and HOME. I also notice that after passing "environ", the program prints out full env. This means the child inherited parent environment variables. Therefore, the environment variables are not automatically inherited and they must be explicitly passed.
 
-### Environment Variables and system()
+## Environment Variables and system()
