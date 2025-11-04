@@ -2,7 +2,7 @@
 
 ## Environment Variable Operations
 
-![](./lab3_images/task1/printenv.jpg)
+![](../lab3_images/task1/printenv.jpg)
 
 After applying command "printenv", what I see are:
 
