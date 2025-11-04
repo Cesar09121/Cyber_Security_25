@@ -12,12 +12,15 @@ After applying command "printenv", what I see are:
 Command "printenv" shows all of the environment variables that are currently in the shell. These variables are used by programs for knowing the user name, where files are located and which shell is being used.
 
 ![](../lab3_images/task1/printPWD.jpg)
+
 Command "printenv PWD" shows where we are in the files system, which means I was currently in the root home directory.
 
 ![](../lab3_images/task1/export.jpg)
+
 After exporting, command "printenv my_lab" prints "lab3". "export" makes the variable part of the environment so other programs and child shells can use it.
 
 ![](../lab3_images/task1/unset.jpg)
+
 After using "unset", "printenv my_lab" prints nothing, which means "unset" removes a variable from shell environment. This surprises me because the variable's deleted without any notification or sign.
 
 ### Passing Environment Variable from PArent Process to Child Process
@@ -35,3 +38,17 @@ I use "nano" command to open file "myprintenv.c" to edit it. The editing include
 I use the command "./a.out > file2" to run the program again. This run save only the parent's environment so I can compare it with the first output. After using command "diff file file2" to compare 2 outputs, I see that there's no differences which mean the environment variables are identical. This confirms the child inherits a copy of the parent's environment.
 
 ### Environment Variables and execve()
+
+![](../lab3_images/task3/step1.jpg)
+
+This is the program "myenv.c". After compiling, this program prints nothing (no environment variables are printed because of NULL for environment), which means the child process didn't receive the environment.
+
+![](../lab3_images/task3/step2.jpg)
+
+Next, I use command "nano myenv.c" to open the file "myenv.c" and change the invocation of execve() by passing environment "environ".
+
+![](../lab3_images/task3/step3.jpg)
+
+After compiling, I can see the output shows environment variable such that PATH, USER and HOME. I also notice that after passing "environ", the program prints out full env. This means the child inherited parent environment variables. Therefore, the environment variables are not automatically inherited and they must be explicitly passed.
+
+### Environment Variables and system()
