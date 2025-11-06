@@ -180,6 +180,7 @@ Running `./catall "testing.txt; rm delete.txt"` with `execve()` threw an error s
 Set-UID programs sometimes need to drop their root privileges after finishing privileged work. However, if they don't properly clean up privileged resources, these "capabilities" can leak to the non-privileged process.
 
 I created a file `/etc/zzz` owned by root.
+
 ![](../lab3_images/task9/pic1.jpg)
 
 I wrote a file named `cap_leak.c` that opens `/etc/zzz` with root privileges, made it `Set-UID`root and compiled it. The program output's `fd is 3` (file descriptor number is 3) and it started a shell.
