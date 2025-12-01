@@ -30,10 +30,9 @@ The vulnerability is in the POST `/transfer` route. The server trusts the sessio
 	</p>`
 
 ` <!-- <p>
-Or by tricking the target user into clicking a malicious link:
-<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
-
- </p> -->`
+    Or by tricking the target user into clicking a malicious link:
+     <a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
+    </p> -->`
 
 ![](../lab4_images/7a.jpg)
 
