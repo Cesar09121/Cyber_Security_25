@@ -22,28 +22,28 @@ The vulnerability is in the POST `/transfer` route. The server trusts the sessio
 
 ## 7
 
-    ![](../lab4_images/7aa.jpg)
+![](../lab4_images/7aa.jpg)
 
 `<p>
-		Or by tricking the target user into clicking a malicious link:
-		<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
+	Or by tricking the target user into clicking a malicious link:
+	<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
 	</p>`
 
-    ` <!-- <p>
-    	Or by tricking the target user into clicking a malicious link:
-    	<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
-    </p> -->`
+` <!-- <p>
+Or by tricking the target user into clicking a malicious link:
+<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
 
-         ![](../lab4_images/7a.jpg)
+ </p> -->`
+
+![](../lab4_images/7a.jpg)
 
 ## 8
 
-     ![](../lab4_images/8aa.jpg)
+![](../lab4_images/8aa.jpg)
 
+![](../lab4_images/8a.jpg)
 
-     ![](../lab4_images/8a.jpg)
-
-     When I clicked `http://localhost:3001/`, the malicious page automatically sends a hidden request to http://localhost:3000/transfer. Since I am already logged in as bob, my browser sends my login cookie with the request. The server thinks bob made the request, so it transfers money and the balance decreases without me clicking anything.
+When I clicked `http://localhost:3001/`, the malicious page automatically sends a hidden request to http://localhost:3000/transfer. Since I am already logged in as bob, my browser sends my login cookie with the request. The server thinks bob made the request, so it transfers money and the balance decreases without me clicking anything.
 
 ## 9
 
