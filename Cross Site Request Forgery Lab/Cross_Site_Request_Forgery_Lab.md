@@ -16,13 +16,13 @@ The balance decreases because bob's logged in and the malicious page automatical
 
 ## 6
 
-![](../lab4_images/6.jpg)
+![](../lab4_images/6a.jpg)
 
 The vulnerability is in the POST `/transfer` route. The server trusts the session cookie and does not use any CSRF protection (like CSRF token). Because of this, a malicious website can automatically send a transfer request while the user is logged in, and the server will still do the money transfer without the user’s knowledge.
 
 ## 7
 
-    ![](../lab4_images/7.jpg)
+    ![](../lab4_images/7aa.jpg)
 
 `<p>
 		Or by tricking the target user into clicking a malicious link:
@@ -34,14 +34,14 @@ The vulnerability is in the POST `/transfer` route. The server trusts the sessio
     	<a href="http://localhost:3000/transfer?to=alice&amount=25">Click here to upgrade!!!</a>
     </p> -->`
 
-         ![](../lab4_images/7.jpg)
+         ![](../lab4_images/7a.jpg)
 
 ## 8
 
-     ![](../lab4_images/8.jpg)
+     ![](../lab4_images/8aa.jpg)
 
 
-     ![](../lab4_images/8.1.jpg)
+     ![](../lab4_images/8a.jpg)
 
      When I clicked `http://localhost:3001/`, the malicious page automatically sends a hidden request to http://localhost:3000/transfer. Since I am already logged in as bob, my browser sends my login cookie with the request. The server thinks bob made the request, so it transfers money and the balance decreases without me clicking anything.
 
